@@ -1,2 +1,19 @@
 .project-section {
+  .list-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-bottom: 50px;
+  }
+
+  a {
+    color: white;
+  }
 }
