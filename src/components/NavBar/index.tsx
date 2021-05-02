@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 interface NavBarProps {}
 
@@ -16,6 +16,11 @@ const NavBar = (props: NavBarProps) => {
         <li>
           <a className="nav-link" href="#info-section">
             <code>/* </code>About<code> */</code>
+          </a>
+        </li>
+        <li>
+          <a className="nav-link" href="#tech-section">
+            <code>/* </code>Tech<code> */</code>
           </a>
         </li>
         <li>

@@ -1,2 +1,13 @@
 .first-section {
+  h1 {
+    height: 42.4px;
+    border-right: 1px solid white;
+    animation: caret-flash 1s step-start infinite;
+  }
+
+  @keyframes caret-flash {
+    50% {
+      border-color: transparent;
+    }
+  }
 }

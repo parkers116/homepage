@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 interface InfoSectionProps {}
 
@@ -16,7 +16,10 @@ const InfoSection = (props: InfoSectionProps) => {
       <br />
       <br />
       <h1>Education</h1>
-      <div>BEng in Computer Engineering - The Hong Kong University of Science and Technology</div>
+      <div>
+        BEng in Computer Engineering - The Hong Kong University of Science and
+        Technology
+      </div>
       <div>09/2016 - 08/2019</div>
     </div>
   );
