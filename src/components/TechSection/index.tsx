@@ -41,11 +41,11 @@ const TECH_LIST: Array<ObjListType> = [
 ];
 
 const List = () => {
-  return TECH_LIST.map((item) => (
-    <div className="flex-grid">
+  return TECH_LIST.map((item, id) => (
+    <div key={id} className="flex-grid">
       <h3># {item.label}</h3>
-      {item.list.map((item2) => (
-        <div>{item2}</div>
+      {item.list.map((item2, id2) => (
+        <div key={id2}>{item2}</div>
       ))}
     </div>
   ));

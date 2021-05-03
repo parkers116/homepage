@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
 
 import "./index.scss";
 
 interface NavBarProps {}
 
 const NavBar = (props: NavBarProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const mobileHeaderBGStyle = classNames("mobile-header-bg", {
+    "mobile-header-bg-open": isOpen,
+  });
+  const navListStyle = classNames("nav-list", {
+    "nav-list-mobile-open": isOpen,
+  });
+
+  const onClickNavBar = () => {
+    setIsOpen((val) => !val);
+  };
+
   return (
     <nav className="nav-bar">
-      <ul className="nav-list">
+      <div className={mobileHeaderBGStyle} onClick={onClickNavBar}>
+        {/* This is the background of navbar */}
+      </div>
+      <div className="mobile-header nav-link" onClick={onClickNavBar}>
+        <i className="fas fa-bars"></i>
+      </div>
+      <ul className={navListStyle} onClick={onClickNavBar}>
         <li>
           <a className="nav-link" href="#first-section">
             <code>/* </code>Top<code> */</code>

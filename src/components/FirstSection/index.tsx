@@ -24,7 +24,7 @@ const FirstSection = (props: FirstSectionProps) => {
         setDisplayString(text.substring(0, i + 1));
         setTimeout(() => {
           typeWriter(text, i + 1, false, cb);
-        }, 100);
+        }, 80);
       } else {
         setTimeout(() => {
           typeWriter(text, i - 1, true, cb);
@@ -35,7 +35,7 @@ const FirstSection = (props: FirstSectionProps) => {
         setDisplayString(text.substring(0, i - 1));
         setTimeout(() => {
           typeWriter(text, i - 1, true, cb);
-        }, 100);
+        }, 80);
       } else if (cb) {
         cb();
       } else {
