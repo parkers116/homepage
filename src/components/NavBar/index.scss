@@ -65,6 +65,7 @@
       flex-direction: column;
       top: 3rem;
       left: 0;
+      opacity: 0;
 
       li {
         &:last-child {
@@ -86,6 +87,7 @@
 
     .nav-list-mobile-open {
       display: flex;
+      animation: drop-down 0.5s forwards;
     }
 
     .mobile-header-bg {
@@ -114,9 +116,21 @@
       border-bottom: 0.1rem solid #000;
       // border-bottom: 0.2rem solid #d63031;
       box-sizing: border-box;
+      z-index: 9;
 
       &:hover {
         background-color: #000;
+      }
+    }
+
+    @keyframes drop-down {
+      from {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
   }

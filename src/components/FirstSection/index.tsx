@@ -57,7 +57,10 @@ const FirstSection = (props: FirstSectionProps) => {
 
   return (
     <div id="first-section" className="first-section section">
-      <h1>{displayString}</h1>
+      <h1>
+        {displayString}
+        <span className="caret"></span>
+      </h1>
       <p>Web Developer</p>
     </div>
   );
