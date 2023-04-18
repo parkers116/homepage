@@ -4,7 +4,10 @@ import "./index.scss";
 
 interface FirstSectionProps {}
 
-const ARR_STR = ["Hello! This is Parker Suen!", "Now working in Hong Kong!"];
+const ARR_STR = [
+  "Hello! This is Parker Suen!",
+  "Now located in Greater Toronto Area, Ontario, Canada!",
+];
 
 const FirstSection = (props: FirstSectionProps) => {
   const [displayString, setDisplayString] = useState<string>();
@@ -47,7 +50,7 @@ const FirstSection = (props: FirstSectionProps) => {
   const startTypeWriter = (arr: Array<string>, i: number) => {
     if (i < arr.length) {
       typeWriter(ARR_STR[i], 0, false, () => {
-        console.log("callback");
+        // console.log("callback");
         startTypeWriter(arr, i + 1);
       });
     } else {

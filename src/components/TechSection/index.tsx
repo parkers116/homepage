@@ -13,14 +13,14 @@ const TECH_LIST: Array<ObjListType> = [
   {
     label: "Front-end",
     list: [
-      "React.js / jQuery / Vanilla.js",
+      "React.js / TypeScript / jQuery",
+      "jQuery / JSP",
       "HTML5 / CSS3 / JavaScript (ES6+)",
-      "TypeScript",
     ],
   },
   {
     label: "Back-end",
-    list: ["Node.js (Express.js)", "SQL"],
+    list: ["Node.js (Express.js)", "Servlet", "SQL"],
   },
   {
     label: "Database",
