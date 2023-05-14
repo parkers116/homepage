@@ -1,4 +1,6 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 import NavBar from "./components/NavBar";
 import FirstSection from "./components/FirstSection";
@@ -12,17 +14,19 @@ import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <main>
-        <FirstSection />
-        <InfoSection />
-        <TechSection />
-        <ProjectSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <NavBar />
+        <main>
+          <FirstSection />
+          <InfoSection />
+          <TechSection />
+          <ProjectSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
