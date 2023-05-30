@@ -7,6 +7,7 @@ import { closeModalProjectDetails, openModalProjectDetails } from "../../feature
 import Modal from "../Modal";
 
 import "./index.scss";
+import classNames from "classnames";
 
 interface ObjArrType {
   name: string;
@@ -206,19 +207,23 @@ const ProjectList = (dispatch: Dispatch<AnyAction>) => {
       {ARR_LIST.map((item, id) => (
         <div key={id} className="list-container">
           <h3># {item.label}</h3>
-          {item.arr.map((item2, id2) => (
-            <div key={id2} className="list-item">
-              <span>{"<!--"}</span>
-              <button
-                onClick={() => {
-                  dispatch(openModalProjectDetails({ label: item.label, ...item2 }));
-                }}
-              >
-                {item2.name}
-              </button>
-              <span>{"-->"}</span>
-            </div>
-          ))}
+          {item.arr.map((item2, id2) => {
+            let ListItemClass = classNames("list-item", { "not-available": !item2.isAvailable });
+
+            return (
+              <div key={id2} className={ListItemClass}>
+                <span>{"<!--"}</span>
+                <button
+                  onClick={() => {
+                    dispatch(openModalProjectDetails({ label: item.label, ...item2 }));
+                  }}
+                >
+                  {item2.name}
+                </button>
+                <span>{"-->"}</span>
+              </div>
+            );
+          })}
         </div>
       ))}
     </>
@@ -245,16 +250,21 @@ const ProjectSection = (props: ProjectSectionProps) => {
             </button>
             <div className="header"># {objSelectedProject.label}</div>
             <div className="sub-header">{objSelectedProject.name}</div>
+            {!objSelectedProject.isAvailable && (
+              <div className="desc">
+                (* The demo link is no longer available, but you can still check out the source code.)
+              </div>
+            )}
             <div className="content">
               <button>
-                <a href={objSelectedProject.href} target="blank">
+                <a href={objSelectedProject.href} target="_blank" rel="noreferrer">
                   <code>{"/* "}</code>
                   Demo Link
                   <code>{" */"}</code>
                 </a>
               </button>
               <button>
-                <a href={objSelectedProject.sourcecode} target="blank">
+                <a href={objSelectedProject.sourcecode} target="_blank" rel="noreferrer">
                   <code>{"/* "}</code>
                   Source Code
                   <code>{" */"}</code>

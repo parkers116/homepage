@@ -53,6 +53,12 @@
           color: #d63031;
         }
       }
+
+      &.not-available {
+        button {
+          text-decoration: line-through;
+        }
+      }
     }
   }
 
@@ -107,6 +113,11 @@
     padding-bottom: 25px;
     font-size: 16px;
     font-weight: bold;
+  }
+
+  .desc {
+    padding-bottom: 25px;
+    font-size: 12px;
   }
 
   .content {
