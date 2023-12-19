@@ -4,10 +4,7 @@ import "./index.scss";
 
 interface FirstSectionProps {}
 
-const ARR_STR = [
-  "Hello! This is Parker Suen!",
-  "Now located in Greater Toronto Area, Ontario, Canada!",
-];
+const ARR_STR = ["Hello! This is Parker Suen!", "Now located in Hong Kong!"];
 
 const FirstSection = (props: FirstSectionProps) => {
   const [displayString, setDisplayString] = useState<string>();
@@ -16,12 +13,7 @@ const FirstSection = (props: FirstSectionProps) => {
     startTypeWriter(ARR_STR, 0);
   }, []);
 
-  const typeWriter = (
-    text: string,
-    i: number,
-    isReverse: boolean,
-    cb?: () => void
-  ) => {
+  const typeWriter = (text: string, i: number, isReverse: boolean, cb?: () => void) => {
     if (!isReverse) {
       if (i < text.length) {
         setDisplayString(text.substring(0, i + 1));

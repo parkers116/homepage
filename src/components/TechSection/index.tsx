@@ -13,7 +13,7 @@ const TECH_LIST: Array<ObjListType> = [
   {
     label: "Front-end",
     list: [
-      "React.js / TypeScript / jQuery",
+      "React.js / TypeScript",
       "jQuery / JSP",
       "HTML5 / CSS3 / JavaScript (ES6+)",
     ],
